@@ -1,19 +1,34 @@
 Cypress.Commands.add('login', (username: string, password: string) => {
-    // 1. cy.request logowania
-    cy.request({
-        method: 'POST',
-        url: 'http://localhost:4001/users/signin',
-        body: {
-            username: username,
-            password: password,
+    cy.session(
+        [username, password],
+
+        () => {
+            cy.request({
+                method: 'POST',
+                url: 'http://localhost:4001/users/signin',
+                body: {
+                    username: username,
+                    password: password,
+                },
+            }).then((response) => {
+                localStorage.setItem('user', JSON.stringify(response.body))
+                cy.wrap(response.body.token).as('jwtToken')
+                cy.setCookie('token', response.body.token)
+            })
         },
-    }).then((response) => {
-        // 2. ustawimy odpowiedź w localStorage
-        localStorage.setItem('user', JSON.stringify(response.body))
-        // 3. ustawimy ciastko 'token' z wartością tokena z odpowiedzi
-        cy.wrap(response.body.token).as('jwtToken')
-        cy.setCookie('token', response.body.token)
-    })
-    // 4. wejdziemy na stronę główną i powinniśmy być zalogowani
-    cy.visit('/')
+
+        {
+            validate() {
+                cy.get('@jwtToken').then(token => {
+                    cy.request({
+                        method: 'GET',
+                        url: 'http://localhost:4001/users/me',
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    }).its('status').should('eq', 200)
+                })
+            },
+        }
+    )
 })

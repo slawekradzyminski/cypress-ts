@@ -1,6 +1,7 @@
 describe('Home page tests', () => {
     beforeEach(() => {
         cy.login(Cypress.env('login'), Cypress.env('password'))
+        cy.visit('/')
     })
   
     it('should display at least one user', () => {
