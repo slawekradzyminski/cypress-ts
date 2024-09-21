@@ -1,27 +1,24 @@
 /// <reference types="cypress" />
 
-// Welcome to Cypress!
-//
-// This spec file contains a variety of sample tests
-// for a todo list app that are designed to demonstrate
-// the power of writing tests in Cypress.
-//
-// To learn more about how Cypress works and
-// what makes it such an awesome testing tool,
-// please read our getting started guide:
-// https://on.cypress.io/introduction-to-cypress
-
 describe('Login page tests', () => {
-    beforeEach(() => {
-      // Cypress starts out with a blank slate for each test
-      // so we must tell it to visit our website with the `cy.visit()` command.
-      // Since we want to visit the same URL at the start of all our tests,
-      // we include it in our beforeEach function so that it runs before each test
-      cy.visit('/')
-    })
-  
-    it('should login successfully', () => {
-
-    })
+  beforeEach(() => {
+    cy.visit('/')
   })
-  
+
+  it.only('should login successfully', () => {
+    cy.get('.form-control').eq(0).type(Cypress.env('login'))
+    cy.get('.form-control').eq(1).type(Cypress.env('password'))
+    cy.get('.btn-primary').click()
+
+    cy.get('h1').should('contain.text', 'Slawomir')
+  })
+
+  it('should fail to login', () => {
+    cy.get('.form-control').eq(0).type('adminek')
+    cy.get('.form-control').eq(1).type('adminek')
+    cy.get('.btn-primary').click()
+
+    cy.get('.alert-danger').should('have.text', 'Invalid username/password supplied')
+  })
+
+})
