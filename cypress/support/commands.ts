@@ -1,6 +1,6 @@
 import { User } from "../../types/registerTypes"
 
-const apiUrl = `http://localhost:4001`
+const apiUrl = Cypress.env('backendUrl')
 
 Cypress.Commands.add('login', (username: string, password: string) => {
     cy.session(
