@@ -12,19 +12,18 @@ Cypress.Commands.add('login', (username: string, password: string) => {
                 },
             }).then((response) => {
                 localStorage.setItem('user', JSON.stringify(response.body))
-                cy.wrap(response.body.token).as('jwtToken')
                 cy.setCookie('token', response.body.token)
             })
         },
 
         {
             validate() {
-                cy.get('@jwtToken').then(token => {
+                cy.getCookie('token').then(cookie => {
                     cy.request({
                         method: 'GET',
                         url: 'http://localhost:4001/users/me',
                         headers: {
-                            Authorization: `Bearer ${token}`
+                            Authorization: `Bearer ${cookie?.value}`
                         }
                     }).its('status').should('eq', 200)
                 })
