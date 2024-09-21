@@ -1,6 +1,6 @@
-import { User } from "../types/registerTypes";
+import { User } from "../../types/registerTypes";
 import { faker } from '@faker-js/faker';
-import { Role } from "../types/roles";
+import { Role } from "../../types/roles";
 
 export const getRandomUser = (): User => {
     return {
