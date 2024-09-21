@@ -11,11 +11,7 @@ describe('Login page tests', () => {
     // given - setup testu
     const user = getRandomUser()
     cy.log(JSON.stringify(user, null, 2))
-    cy.request({
-      method: 'POST',
-      url: 'http://localhost:4001/users/signup',
-      body: user
-    })
+    cy.register(user)
 
     // when - testowana akcja
     cy.get('.form-control').eq(0).type(user.username)

@@ -1,10 +1,10 @@
-declare namespace Cypress {
-    interface Chainable {
-        /**
-         * Login to application. Use this function in tests which require logged in context
-         * @param username 
-         * @param password 
-         */
-        login(username: string, password: string): void;
+import { User } from "../../types/registerTypes";
+
+declare global {
+    namespace Cypress {
+        interface Chainable {
+            login(username: string, password: string): void;
+            register(user: User): void;
+        }
     }
 }

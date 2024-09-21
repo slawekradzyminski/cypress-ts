@@ -1,3 +1,7 @@
+import { User } from "../../types/registerTypes"
+
+const apiUrl = `http://localhost:4001`
+
 Cypress.Commands.add('login', (username: string, password: string) => {
     cy.session(
         [username, password],
@@ -5,7 +9,7 @@ Cypress.Commands.add('login', (username: string, password: string) => {
         () => {
             cy.request({
                 method: 'POST',
-                url: 'http://localhost:4001/users/signin',
+                url: `${apiUrl}/users/signin`,
                 body: {
                     username: username,
                     password: password,
@@ -30,4 +34,12 @@ Cypress.Commands.add('login', (username: string, password: string) => {
             },
         }
     )
+})
+
+Cypress.Commands.add('register', (user: User) => {
+    cy.request({
+        method: 'POST',
+        url: `${apiUrl}/users/signup`,
+        body: user
+    })
 })
