@@ -1,3 +1,5 @@
+import { homePage } from "../pages/homePage"
+
 describe('Home page tests', () => {
     beforeEach(() => {
         cy.login(Cypress.env('login'), Cypress.env('password'))
@@ -6,16 +8,23 @@ describe('Home page tests', () => {
     })
   
     it('should display at least one user', () => {
+        // then
         cy.get('ul li').should('have.length.at.least', 1)
     })
   
     it('should logout', () => {
-        cy.get('#logout').click()
+        // when
+        homePage.clickLogout()
+
+        // then
         cy.url().should('contain', 'login')
     })
 
     it('should open add more page', () => {
-        cy.get('#addmore').click()
+        // when
+        homePage.clickAddMore()
+
+        // then
         cy.url().should('contain', 'add-user')
     })
   
