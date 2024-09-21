@@ -1,4 +1,4 @@
-import { User } from "../../types/registerTypes"
+import { User } from "../types/registerTypes"
 
 const apiUrl = Cypress.env('backendUrl')
 

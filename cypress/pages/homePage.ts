@@ -1,4 +1,4 @@
-import { User } from "../../types/registerTypes"
+import { User } from "../types/registerTypes"
 
 export const homePage = {
 

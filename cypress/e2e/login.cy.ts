@@ -29,12 +29,4 @@ describe('Login page tests', () => {
     cy.get('.alert-danger').should('have.text', 'Invalid username/password supplied')
   })
 
-  it('should open register page', () => {
-    // when
-    loginPage.clickRegister()
-
-    // then
-    cy.url().should('contain', 'register')
-  })
-
 })

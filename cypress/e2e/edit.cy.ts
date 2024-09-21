@@ -1,4 +1,4 @@
-import { User } from "../../types/registerTypes"
+import { User } from "../types/registerTypes"
 import { getRandomUser } from "../generators/userGenerator"
 import { editPage } from "../pages/editPage"
 import { homePage } from "../pages/homePage"
