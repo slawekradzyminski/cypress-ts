@@ -34,6 +34,8 @@ jobs:
 
       - name: Run Cypress tests
         run: npx percy exec -- npx cypress run --browser chrome --env login=${{ secrets.LOGIN }},password=${{ secrets.PASSWORD }}
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
   
       - name: Warunkowe udostępnienie screenshotów przy failu
         uses: actions/upload-artifact@v4 

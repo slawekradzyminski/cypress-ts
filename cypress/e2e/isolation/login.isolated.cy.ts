@@ -17,7 +17,7 @@ describe('Login page tests is isolation', () => {
     const user = getRandomUser()
     loginMocks.mockSuccess(user)
     usersMocks.mockSuccess()
-
+    
     // when
     loginPage.attemptLogin(user.username, user.password)
 
