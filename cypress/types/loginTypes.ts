@@ -11,7 +11,7 @@ export interface LoginResponse {
 
 export interface FailedLoginResponse {
     timestamp: string,
-    status: 422,
+    status: number,
     error: string,
     message: string,
     path: string
