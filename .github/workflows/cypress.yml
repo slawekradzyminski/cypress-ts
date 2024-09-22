@@ -33,7 +33,7 @@ jobs:
         uses: browser-actions/setup-chrome@v1
 
       - name: Run Cypress tests
-        run: npx cypress run --browser chrome --env login=admin,password=admin
+        run: npx percy exec -- npx cypress run --browser chrome --env login=${{ secrets.LOGIN }},password=${{ secrets.PASSWORD }}
   
       - name: Warunkowe udostępnienie screenshotów przy failu
         uses: actions/upload-artifact@v4 
@@ -74,7 +74,7 @@ jobs:
         run: echo "Firefox jest już zainstalowany"
 
       - name: Run Cypress tests in Firefox
-        run: npx cypress run --browser firefox --env login=admin,password=admin
+        run: npx cypress run --browser firefox --env login=${{ secrets.LOGIN }},password=${{ secrets.PASSWORD }}
   
       - name: Warunkowe udostępnienie screenshotów w przypadku faila (Firefox)
         uses: actions/upload-artifact@v4

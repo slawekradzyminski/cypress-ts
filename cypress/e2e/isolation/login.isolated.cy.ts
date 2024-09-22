@@ -17,7 +17,7 @@ describe('Login page tests is isolation', () => {
     const user = getRandomUser()
     loginMocks.mockSuccess(user)
     usersMocks.mockSuccess()
-    
+
     // when
     loginPage.attemptLogin(user.username, user.password)
 
@@ -27,6 +27,7 @@ describe('Login page tests is isolation', () => {
     cy.get('ul li').each(($el, i) => {
       expect($el.text()).to.contain(`${users[i].firstName} ${users[i].lastName}`)
     })
+    cy.percySnapshot('HomePage')
   })
 
   it('should fail to login', () => {
@@ -35,6 +36,8 @@ describe('Login page tests is isolation', () => {
     loginMocks.mockFailure(errorMessage)
 
     // when
+    cy.get('.form-control').should('have.length', 2)
+    cy.percySnapshot('LoginPage')
     loginPage.attemptLogin('wrong', 'wrong')
 
     // then
@@ -47,6 +50,8 @@ describe('Login page tests is isolation', () => {
 
     // then
     cy.url().should('contain', 'register')
+    cy.get('.form-control').should('have.length', 5)
+    cy.percySnapshot('RegisterPage')
   })
 
 })
