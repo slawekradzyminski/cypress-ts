@@ -16,6 +16,7 @@ describe('Edit page tests', () => {
     it('should correctly autocomplete users data', () => {
       // then
       editPage.verifyAutocomplete(user)
+      cy.percySnapshot('EditPage')
     })
 
     it('should successfully edit', () => {
