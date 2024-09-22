@@ -2,8 +2,6 @@
 
 import { getRandomUserWithFirstName } from "../../generators/userGenerator"
 import { loginPage } from "../../pages/loginPage"
-import { loginResponseFrom } from "../../utils/loginResponseUtil"
-import users from "../../fixtures/users.json"
 import { loginMocks } from "../../mocks/loginMocks"
 import { usersMocks } from "../../mocks/usersMocks"
 
@@ -24,25 +22,28 @@ describe('Login page tests is isolation', () => {
 
     // then
     cy.get('h1').should('contain.text', firstName)
-    cy.get('ul li').should('have.length', users.length)
-    cy.get('ul li').each(($el, i) => {
-      expect($el.text()).to.contain(`${users[i].firstName} ${users[i].lastName}`)
-    })
-    cy.percySnapshot('HomePage')
   })
 
   it('should fail to login', () => {
     // given
     const errorMessage = 'Invalid username/password supplied'
     loginMocks.mockFailure(errorMessage)
+    const username = 'wrong'
+    const password = 'wrong'
 
     // when
     cy.get('.form-control').should('have.length', 2)
     cy.percySnapshot('LoginPage')
-    loginPage.attemptLogin('wrong', 'wrong')
+    loginPage.attemptLogin(username, password)
 
     // then
     cy.get('.alert-danger').should('have.text', errorMessage)
+    cy.wait('@loginRequest').then((intercept) => {
+      expect(intercept.request.body).to.deep.equal({
+       username: username,
+        password: password
+      })
+    })
   })
 
   it('should open register page', () => {

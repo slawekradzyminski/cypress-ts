@@ -1,11 +1,6 @@
-import { Role } from "./roles";
+import { CommonUserFields } from "./userTypes";
 
-export interface LoginResponse {
-    username: string,
-    firstName: string,
-    lastName: string,
-    email: string,
-    roles: Role[],
+export interface LoginResponse extends CommonUserFields {
     token: string
 }
 

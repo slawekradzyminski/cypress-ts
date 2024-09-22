@@ -1,4 +1,7 @@
+import { getRandomUser } from "../generators/userGenerator"
+import { usersMocks } from "../mocks/usersMocks"
 import { User } from "../types/registerTypes"
+import { loginResponseFrom } from "../utils/loginResponseUtil"
 
 const apiUrl = Cypress.env('backendUrl')
 
@@ -42,4 +45,13 @@ Cypress.Commands.add('register', (user: User) => {
         url: `${apiUrl}/users/signup`,
         body: user
     })
+})
+
+Cypress.Commands.add('enterHomePageInIsolation', () => {
+    const user = getRandomUser()
+    const loginResponse = loginResponseFrom(user)
+    localStorage.setItem('user', JSON.stringify(loginResponse))
+    cy.setCookie('token', loginResponse.token)
+    usersMocks.mockSuccess()
+    cy.visit('/')
 })

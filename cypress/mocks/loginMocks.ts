@@ -15,7 +15,7 @@ export const loginMocks = {
         cy.intercept('POST', '**/users/signin', {
             statusCode: 422,
             body: getFailedLoginBody(errorMessage)
-        })
+        }).as('loginRequest')
     }
 
 }

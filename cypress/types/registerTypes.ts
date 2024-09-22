@@ -1,12 +1,7 @@
-import { Role } from "./roles";
+import { CommonUserFields } from "./userTypes";
 
-export interface RegisterRequest {
-    username: string,
+export interface RegisterRequest extends CommonUserFields {
     password: string,
-    firstName: string,
-    lastName: string,
-    email: string,
-    roles: Role[]
 }
 
 export type User = RegisterRequest

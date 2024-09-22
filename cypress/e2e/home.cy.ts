@@ -12,21 +12,5 @@ describe('Home page tests', () => {
         cy.get('ul li').should('have.length.at.least', 1)
     })
   
-    it('should logout', () => {
-        // when
-        homePage.clickLogout()
-
-        // then
-        cy.url().should('contain', 'login')
-    })
-
-    it('should open add more page', () => {
-        // when
-        homePage.clickAddMore()
-
-        // then
-        cy.url().should('contain', 'add-user')
-    })
-  
   })
   

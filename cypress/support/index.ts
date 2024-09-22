@@ -5,6 +5,7 @@ declare global {
         interface Chainable {
             login(username: string, password: string): void;
             register(user: User): void;
+            enterHomePageInIsolation(): void;
         }
     }
 }
