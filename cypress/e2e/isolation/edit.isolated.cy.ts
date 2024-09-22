@@ -18,7 +18,7 @@ describe('Edit page tests', () => {
       editPage.verifyAutocomplete(user)
     })
 
-    it.only('should successfully edit', () => {
+    it('should successfully edit', () => {
       // given
       const newUserData = getRandomUser()
       editMocks.mockSuccess(user.username)
