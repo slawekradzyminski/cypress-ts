@@ -73,7 +73,7 @@ jobs:
         uses: browser-actions/setup-firefox@v1
 
       - name: Run Cypress tests
-        run: npx cypress run --browser chrome --env login=${{ secrets.LOGIN }},password=${{ secrets.PASSWORD }}
+        run: npx cypress run --browser firefox --env login=${{ secrets.LOGIN }},password=${{ secrets.PASSWORD }}
   
       - name: Warunkowe udostępnienie screenshotów przy failu
         uses: actions/upload-artifact@v4 
