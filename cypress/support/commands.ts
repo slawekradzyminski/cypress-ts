@@ -1,37 +1,45 @@
-/// <reference types="cypress" />
-// ***********************************************
-// This example commands.ts shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+import { User } from "../types/registerTypes"
+
+const apiUrl = Cypress.env('backendUrl')
+
+Cypress.Commands.add('login', (username: string, password: string) => {
+    cy.session(
+        [username, password],
+
+        () => {
+            cy.request({
+                method: 'POST',
+                url: `${apiUrl}/users/signin`,
+                body: {
+                    username: username,
+                    password: password,
+                },
+            }).then((response) => {
+                localStorage.setItem('user', JSON.stringify(response.body))
+                cy.setCookie('token', response.body.token)
+            })
+        },
+
+        {
+            validate() {
+                cy.getCookie('token').then(cookie => {
+                    cy.request({
+                        method: 'GET',
+                        url: 'http://localhost:4001/users/me',
+                        headers: {
+                            Authorization: `Bearer ${cookie?.value}`
+                        }
+                    }).its('status').should('eq', 200)
+                })
+            },
+        }
+    )
+})
+
+Cypress.Commands.add('register', (user: User) => {
+    cy.request({
+        method: 'POST',
+        url: `${apiUrl}/users/signup`,
+        body: user
+    })
+})

@@ -1,0 +1,526 @@
+[
+    {
+        "id": 1,
+        "username": "admin",
+        "email": "admin@email.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Slawomir",
+        "lastName": "Radzyminski"
+    },
+    {
+        "id": 2,
+        "username": "client",
+        "email": "client@email.com",
+        "roles": [
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Gosia",
+        "lastName": "Radzyminska"
+    },
+    {
+        "id": 3,
+        "username": "fsdfdsfd",
+        "email": "administrator@testarena.pl",
+        "roles": [
+            "ROLE_CLIENT"
+        ],
+        "firstName": "fdfsdfds",
+        "lastName": "fsdfdsf"
+    },
+    {
+        "id": 4,
+        "username": "Nat_Dare",
+        "email": "Mya.Gutmann94@yahoo.com",
+        "roles": [
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Helena",
+        "lastName": "Hills"
+    },
+    {
+        "id": 5,
+        "username": "Kiel.Funk",
+        "email": "Nella69@hotmail.com",
+        "roles": [
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Vicenta",
+        "lastName": "Tremblay"
+    },
+    {
+        "id": 6,
+        "username": "Kamron.Strosin",
+        "email": "Felix.Feest@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Arne",
+        "lastName": "Schulist"
+    },
+    {
+        "id": 7,
+        "username": "Carley97",
+        "email": "Pasquale89@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Joesph",
+        "lastName": "Conn"
+    },
+    {
+        "id": 8,
+        "username": "Valentine88",
+        "email": "Ruby87@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Kylee",
+        "lastName": "Pacocha"
+    },
+    {
+        "id": 9,
+        "username": "Lelah89",
+        "email": "Madisen_Feest@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Ally",
+        "lastName": "Hackett"
+    },
+    {
+        "id": 10,
+        "username": "Sherman20",
+        "email": "Peyton.Jacobi@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Shana",
+        "lastName": "Wilkinson"
+    },
+    {
+        "id": 11,
+        "username": "Weston65",
+        "email": "Glenda.Kihn77@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Erika",
+        "lastName": "Pfeffer"
+    },
+    {
+        "id": 12,
+        "username": "Karlee.Johnston-Balistreri64",
+        "email": "Crystal60@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Domenico",
+        "lastName": "Bashirian"
+    },
+    {
+        "id": 13,
+        "username": "Thurman61",
+        "email": "Wilhelmine_Kuhn0@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Roberta",
+        "lastName": "Becker"
+    },
+    {
+        "id": 14,
+        "username": "Ardella_Brakus",
+        "email": "Mackenzie40@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Thaddeus",
+        "lastName": "Kohler"
+    },
+    {
+        "id": 15,
+        "username": "Kaia.Koss52",
+        "email": "Trycia_Schowalter@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Taya",
+        "lastName": "Altenwerth"
+    },
+    {
+        "id": 16,
+        "username": "Gennaro_Champlin71",
+        "email": "Rylan34@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Richmond",
+        "lastName": "Wuckert"
+    },
+    {
+        "id": 17,
+        "username": "Sibyl_Kub",
+        "email": "Blanche.Heaney@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Irwin",
+        "lastName": "Keeling"
+    },
+    {
+        "id": 18,
+        "username": "Theodore.Ankunding3",
+        "email": "Magdalena93@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Glennie",
+        "lastName": "Rippin"
+    },
+    {
+        "id": 19,
+        "username": "Terrell.Rau27",
+        "email": "Brandi_Veum29@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Mayra",
+        "lastName": "Keeling"
+    },
+    {
+        "id": 20,
+        "username": "Ima.Morar53",
+        "email": "Olin.Kertzmann@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Francisca",
+        "lastName": "Effertz"
+    },
+    {
+        "id": 21,
+        "username": "Bethel78",
+        "email": "Nathanial.Roob@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Riley",
+        "lastName": "Grimes"
+    },
+    {
+        "id": 22,
+        "username": "Elmore71",
+        "email": "Alverta6@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Janae",
+        "lastName": "Harvey"
+    },
+    {
+        "id": 23,
+        "username": "Rubye_Hoppe",
+        "email": "Blake_Farrell18@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Tracey",
+        "lastName": "Wehner"
+    },
+    {
+        "id": 24,
+        "username": "Hazel.Batz",
+        "email": "Jacquelyn.Bogan49@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Peggie",
+        "lastName": "Gerhold"
+    },
+    {
+        "id": 25,
+        "username": "Magdalena.Stracke",
+        "email": "Aglae88@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Nathan",
+        "lastName": "Hartmann"
+    },
+    {
+        "id": 26,
+        "username": "Carolyne.Steuber89",
+        "email": "Dean45@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Carey",
+        "lastName": "Christiansen"
+    },
+    {
+        "id": 27,
+        "username": "Bernhard92",
+        "email": "Patience_Mueller74@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Brando",
+        "lastName": "Simonis"
+    },
+    {
+        "id": 28,
+        "username": "Vena91",
+        "email": "Jeromy.Hermann95@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Jack",
+        "lastName": "Koss"
+    },
+    {
+        "id": 29,
+        "username": "Golda_Cormier77",
+        "email": "Vicky13@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Ariel",
+        "lastName": "Conroy"
+    },
+    {
+        "id": 30,
+        "username": "Jeremy_Bernier",
+        "email": "Arely.Prohaska85@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Lafayette",
+        "lastName": "Leannon"
+    },
+    {
+        "id": 31,
+        "username": "Sydni.Parker-Kreiger",
+        "email": "Carmela.Lesch46@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Zack",
+        "lastName": "Hartmann"
+    },
+    {
+        "id": 32,
+        "username": "Demarco93",
+        "email": "Harry.Littel1@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Gudrun",
+        "lastName": "Schamberger"
+    },
+    {
+        "id": 33,
+        "username": "Ada42",
+        "email": "Palma.Stracke@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Grover",
+        "lastName": "McGlynn"
+    },
+    {
+        "id": 34,
+        "username": "Adriel_Waters",
+        "email": "Walker_Satterfield41@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Kathleen",
+        "lastName": "Hilll"
+    },
+    {
+        "id": 35,
+        "username": "Esta_Wiza56",
+        "email": "Regan_Lebsack25@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Craig",
+        "lastName": "Spinka"
+    },
+    {
+        "id": 36,
+        "username": "Nolan37",
+        "email": "Joey43@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Monica",
+        "lastName": "Schmeler"
+    },
+    {
+        "id": 37,
+        "username": "Jakob29",
+        "email": "Giovani.Crona84@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Damien",
+        "lastName": "Farrell"
+    },
+    {
+        "id": 38,
+        "username": "River_Runolfsson91",
+        "email": "Alvena.Pagac@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Clarabelle",
+        "lastName": "Zboncak-Herman"
+    },
+    {
+        "id": 39,
+        "username": "Ferne_Hoppe35",
+        "email": "Beulah_Stanton98@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Jaime",
+        "lastName": "Aufderhar-Hilll"
+    },
+    {
+        "id": 40,
+        "username": "Seamus_Bayer66",
+        "email": "Eldora_Beahan29@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Melisa",
+        "lastName": "Predovic"
+    },
+    {
+        "id": 41,
+        "username": "Barry.Kuvalis25",
+        "email": "Luna3@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Kayleigh",
+        "lastName": "Little"
+    },
+    {
+        "id": 42,
+        "username": "Emmie.Zboncak",
+        "email": "Orlo68@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Dora",
+        "lastName": "Nitzsche"
+    },
+    {
+        "id": 43,
+        "username": "Russell_Homenick75",
+        "email": "Nikko90@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Jarred",
+        "lastName": "Thiel"
+    },
+    {
+        "id": 44,
+        "username": "Olaf19",
+        "email": "Coty.Farrell3@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Lindsay",
+        "lastName": "Batz"
+    },
+    {
+        "id": 45,
+        "username": "Hallie_Orn60",
+        "email": "Daphne_Bode82@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Sandrine",
+        "lastName": "Homenick"
+    },
+    {
+        "id": 46,
+        "username": "Ila.Hartmann",
+        "email": "Carmel.Borer@hotmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Ryan",
+        "lastName": "Hilll"
+    },
+    {
+        "id": 47,
+        "username": "Sarah.Kerluke32",
+        "email": "Vivianne.OHara@gmail.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Ursula",
+        "lastName": "Monahan"
+    },
+    {
+        "id": 48,
+        "username": "Ryder.Daugherty10",
+        "email": "Ima26@yahoo.com",
+        "roles": [
+            "ROLE_ADMIN",
+            "ROLE_CLIENT"
+        ],
+        "firstName": "Angelita",
+        "lastName": "Lowe"
+    }
+]

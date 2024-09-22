@@ -1,0 +1,44 @@
+name: Cypress CI september 2024
+
+on: pull_request
+
+jobs:
+  tests-chrome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code (git clone)
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js (Github Actions instaluje nam wewnątrz kontenera node js w wersji 20)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 19
+
+      - name: Checkout external repository (pobranie docker compose'a z środowiskiem testowym)
+        uses: actions/checkout@v4
+        with:
+          repository: "slawekradzyminski/awesome-localstack"
+          path: "awesome-localstack"
+
+      - name: Run Docker Compose (uruchamianie środowiska testowego wewnątrz kontenera)
+        run: |
+          cd awesome-localstack
+          chmod +x run-docker-compose-ci.sh
+          ./run-docker-compose-ci.sh
+
+      - name: Install (instalacja zaleznosci projektu w tym cypressa)
+        run: npm install
+
+      - name: Setup Chrome (instalacja Chrome'a wewnątrz kontenera)
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Run Cypress tests
+        run: npx cypress run --browser chrome --env login=admin,password=admin
+  
+      - name: Warunkowe udostępnienie screenshotów przy failu
+        uses: actions/upload-artifact@v4 
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
