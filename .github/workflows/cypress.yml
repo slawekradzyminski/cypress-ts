@@ -12,7 +12,7 @@ jobs:
       - name: Set up Node.js (Github Actions instaluje nam wewnątrz kontenera node js w wersji 20)
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 19
 
       - name: Checkout external repository (pobranie docker compose'a z środowiskiem testowym)
         uses: actions/checkout@v4
