@@ -1,4 +1,4 @@
-import { getRandomUser } from "../generators/userGenerator"
+import { getRandomUser, getRandomUserWithFirstName } from "../generators/userGenerator"
 import { usersMocks } from "../mocks/usersMocks"
 import { User } from "../types/registerTypes"
 import { loginResponseFrom } from "../utils/loginResponseUtil"
@@ -48,7 +48,7 @@ Cypress.Commands.add('register', (user: User) => {
 })
 
 Cypress.Commands.add('enterHomePageInIsolation', () => {
-    const user = getRandomUser()
+    const user = getRandomUserWithFirstName('Slawomir')
     const loginResponse = loginResponseFrom(user)
     localStorage.setItem('user', JSON.stringify(loginResponse))
     cy.setCookie('token', loginResponse.token)
