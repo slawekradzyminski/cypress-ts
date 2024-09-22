@@ -21,16 +21,6 @@
         "lastName": "Radzyminska"
     },
     {
-        "id": 3,
-        "username": "fsdfdsfd",
-        "email": "administrator@testarena.pl",
-        "roles": [
-            "ROLE_CLIENT"
-        ],
-        "firstName": "fdfsdfds",
-        "lastName": "fsdfdsf"
-    },
-    {
         "id": 4,
         "username": "Nat_Dare",
         "email": "Mya.Gutmann94@yahoo.com",
