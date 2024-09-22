@@ -1,6 +1,6 @@
 name: Cypress CI september 2024
 
-on: pull_request
+on: push
 
 jobs:
   tests-chrome:
