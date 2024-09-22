@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { getRandomUser } from "../../generators/userGenerator"
+import { getRandomUserWithFirstName } from "../../generators/userGenerator"
 import { loginPage } from "../../pages/loginPage"
 import { loginResponseFrom } from "../../utils/loginResponseUtil"
 import users from "../../fixtures/users.json"
@@ -14,7 +14,8 @@ describe('Login page tests is isolation', () => {
 
   it('should login successfully', () => {
     // given
-    const user = getRandomUser()
+    const firstName = 'Slawomir'
+    const user = getRandomUserWithFirstName(firstName)
     loginMocks.mockSuccess(user)
     usersMocks.mockSuccess()
     
@@ -22,7 +23,7 @@ describe('Login page tests is isolation', () => {
     loginPage.attemptLogin(user.username, user.password)
 
     // then
-    cy.get('h1').should('contain.text', user.firstName)
+    cy.get('h1').should('contain.text', firstName)
     cy.get('ul li').should('have.length', users.length)
     cy.get('ul li').each(($el, i) => {
       expect($el.text()).to.contain(`${users[i].firstName} ${users[i].lastName}`)
