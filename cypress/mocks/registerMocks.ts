@@ -6,7 +6,7 @@ export const registerMocks = {
             body: {
                 token: 'fakeToken'
             }
-        })
+        }).as('registerRequest')
     }
 
 }
