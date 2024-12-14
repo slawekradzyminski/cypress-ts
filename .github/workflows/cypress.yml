@@ -1,0 +1,38 @@
+name: Cypress E2E Tests
+
+on: push
+
+jobs:
+  chrome-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository with Cypress tests
+        uses: actions/checkout@v4
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Checkout external repository (Slawek's localstack)
+        uses: actions/checkout@v4
+        with:
+          repository: "slawekradzyminski/awesome-localstack"
+          path: "awesome-localstack"
+      - name: Run Docker Compose
+        run: |
+          cd awesome-localstack
+          chmod +x run-docker-compose-ci.sh
+          ./run-docker-compose-ci.sh
+      - name: Install chrome
+        uses: browser-actions/setup-chrome@v1
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npx cypress run --browser chrome --env login=admin,password=admin
+      - name: Save screenshots on failure
+        uses: actions/upload-artifact@v4 
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
