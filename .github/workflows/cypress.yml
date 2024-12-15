@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots
+          name: cypress-screenshots-chrome
           path: cypress/screenshots
           if-no-files-found: ignore
   firefox-tests:
@@ -72,7 +72,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots
+          name: cypress-screenshots-firefox
           path: cypress/screenshots
           if-no-files-found: ignore
   edge-tests:
@@ -110,7 +110,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots
+          name: cypress-screenshots-edge
           path: cypress/screenshots
           if-no-files-found: ignore
       - name: Load test report history
