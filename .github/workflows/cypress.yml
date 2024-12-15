@@ -5,7 +5,6 @@ on: push
 jobs:
   chrome-tests:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository with Cypress tests
         uses: actions/checkout@v4
@@ -31,7 +30,9 @@ jobs:
         run: |
           npx cypress run \
             --browser chrome \
-            --env "login=${{ secrets.USERNAME }},password=${{ secrets.PASSWORD }}"
+            --env "login=${{ secrets.USERNAME }},password=${{ secrets.PASSWORD }}" \
+            --record \
+            --key ${{ secrets.CYPRESS_RECORD_KEY }}
       - name: Save screenshots on failure
         uses: actions/upload-artifact@v4
         if: failure()
@@ -39,9 +40,9 @@ jobs:
           name: cypress-screenshots-chrome
           path: cypress/screenshots
           if-no-files-found: ignore
+
   firefox-tests:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository with Cypress tests
         uses: actions/checkout@v4
@@ -75,9 +76,9 @@ jobs:
           name: cypress-screenshots-firefox
           path: cypress/screenshots
           if-no-files-found: ignore
+
   edge-tests:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository with Cypress tests
         uses: actions/checkout@v4
