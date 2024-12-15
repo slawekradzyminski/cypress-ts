@@ -5,7 +5,6 @@ on: push
 jobs:
   chrome-tests:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository with Cypress tests
         uses: actions/checkout@v4
@@ -28,7 +27,11 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run tests
-        run: npx cypress run --browser chrome --env login=admin,password=admin
+        run: |
+          npx cypress run \
+            --browser chrome \
+            --env login=${{ secrets.USERNAME }},\
+            password=${{ secrets.PASSWORD }}
       - name: Save screenshots on failure
         uses: actions/upload-artifact@v4 
         if: failure()
